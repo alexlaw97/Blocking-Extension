@@ -111,3 +111,7 @@ body[data-dark=true] input:focus {
 [align=center] {
   align-items: center;
 }
+
+#pass{
+  width:50px;
+}
