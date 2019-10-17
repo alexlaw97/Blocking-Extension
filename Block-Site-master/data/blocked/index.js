@@ -1,6 +1,6 @@
 /* globals tldjs */
 'use strict';
-
+var runtime;
 // localization
 [...document.querySelectorAll('[data-i18n]')].forEach(e => {
   e[e.dataset.i18nValue || 'textContent'] = chrome.i18n.getMessage(e.dataset.i18n);
@@ -21,7 +21,16 @@ if (args.get('url')) {
 }
 
 document.addEventListener('submit', e => {
-  alert("It will continue block after 60 seconds");
+    chrome.storage.local.get({
+    timeout: ''
+
+  },prefs => {
+   runtime = prefs.timeout;
+   localStorage.setItem('time', runtime);
+  })
+  var bla = localStorage.getItem('time');
+  alert("It will continue block after "+  bla  +" seconds");
+  //alert("It will continue block after 60 seconds");
   e.preventDefault();
   chrome.runtime.sendMessage({
     method: 'open-once',
