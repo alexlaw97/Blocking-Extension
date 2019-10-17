@@ -44,6 +44,8 @@ const onBeforeRequest = d => {
     if (index !== -1) {
       if (!(hostname in ids)) {
         ids[hostname] = window.setTimeout(() => {
+          notify("Timeout! Website had been blocked!");
+          chrome.tabs.reload();
           once.splice(index, 1);
           delete ids[hostname];
         }, prefs.timeout * 1000);
