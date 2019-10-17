@@ -132,12 +132,15 @@
     "message": "This tab doesn't have a valid URL"
   },
   "bg_msg_2": {
-    "message": "Wrong password! Please retry!"
+    "message": "Wrong password! Please retry! "
   },
   "bg_msg_3": {
     "message": "Go to the options page and set a master password"
   },
   "bg_msg_4": {
     "message": "Too many wrong passwords. Please wait for ## minute(s) and retry."
+  },
+  "bg_msg_5": {
+    "message": "Upload sucessful"
   }
 }

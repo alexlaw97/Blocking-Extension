@@ -1,5 +1,6 @@
 'use strict';
 
+
 // localization
 [...document.querySelectorAll('[data-i18n]')].forEach(e => {
   console.log(e);
@@ -8,7 +9,6 @@
 
 const info = document.getElementById('info');
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
 const prefs = {
   timeout: 60, // seconds
   close: 0, // seconds
@@ -35,7 +35,7 @@ const tbody = document.querySelector('#list tbody');
 const wildcard = h => {
   if (h.indexOf('://') === -1) {
     return `*://${h}/*`;
-  }
+  } 
   return h;
 };
 
@@ -51,7 +51,6 @@ function add(hostname) {
   node.querySelector('[data-cmd="remove"]').value = chrome.i18n.getMessage('options_remove');
   tbody.appendChild(node);
   list.dataset.visible = true;
-
   return rd;
 }
 
@@ -63,11 +62,14 @@ document.getElementById('add').addEventListener('submit', e => {
   }
 });
 
+
+
 const init = (table = true) => chrome.storage.local.get(prefs, ps => {
   Object.assign(prefs, ps);
   if (table) {
     prefs.blocked.forEach(add);
   }
+
   document.getElementById('title').checked = prefs.title;
   document.getElementById('initialBlock').checked = prefs.initialBlock;
   document.getElementById('reverse').checked = prefs.reverse;
@@ -93,6 +95,8 @@ document.addEventListener('click', e => {
     const tr = target.closest('tr');
     tr.parentNode.removeChild(tr);
   }
+
+
   else if (cmd === 'unlock') {
     const password = document.getElementById('password').value;
     chrome.runtime.sendMessage({

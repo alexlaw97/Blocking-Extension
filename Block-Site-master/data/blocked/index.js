@@ -21,14 +21,17 @@ if (args.get('url')) {
 }
 
 document.addEventListener('submit', e => {
+  alert("It will continue block after 60 seconds");
   e.preventDefault();
   chrome.runtime.sendMessage({
     method: 'open-once',
     url: args.get('url'),
-    password: e.target.querySelector('[type=password]').value
+    password: e.target.querySelector('[type=password]').value,
+    
   });
 });
 
+// Background Color
 document.body.dataset.dark = localStorage.getItem('dark') || 'true';
 document.getElementById('switch').addEventListener('click', () => {
   const val = document.body.dataset.dark === 'false';
@@ -42,6 +45,7 @@ document.getElementById('options').addEventListener('click', e => {
   });
 });
 
+//Fetch Website Title 
 const title = () => fetch(args.get('url')).then(r => r.text()).then(content => {
   const dom = new DOMParser().parseFromString(content, 'text/html');
   if (dom.title) {
@@ -73,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => chrome.storage.local.get({
       }
     }, 1000);
   }
-  //
+  //Unblock Hostname
   document.getElementById('exception').textContent = chrome.i18n.getMessage(
     prefs.reverse ? 'blocked_add_to_whitelist' : 'blocked_remove_blocking'
   );
