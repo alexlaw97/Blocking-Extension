@@ -141,6 +141,6 @@
     "message": "Too many wrong passwords. Please wait for ## minute(s) and retry."
   },
   "bg_msg_5": {
-    "message": "Upload sucessful"
+    "message": "Block sucessful"
   }
 }

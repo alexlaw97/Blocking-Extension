@@ -252,14 +252,14 @@ const onMessage = (request, sender, response) => {
     chrome.tabs.remove(sender.tab.id);
   }
   else if (request.method === 'append-to-list') {
-    notify('bg_msg_5');
-    var audio = new Audio('../data/sounds/Portal2_sfx_button_positive.mp3');
-    audio.play();
-    const blocked = [...prefs.blocked, ...request.hostnames].filter((s, i, l) => l.indexOf(s) === i);
-    chrome.storage.local.set({
-      blocked
-    }, response);
-    return true;
+      notify('bg_msg_5');
+      var audio = new Audio('../data/sounds/Portal2_sfx_button_positive.mp3');
+      audio.play();
+      const blocked = [...prefs.blocked, ...request.hostnames].filter((s, i, l) => l.indexOf(s) === i);
+      chrome.storage.local.set({
+        blocked
+      }, response);
+      return true; 
   }
   else if (request.method === 'remove-from-list') {
     const ids = [];
