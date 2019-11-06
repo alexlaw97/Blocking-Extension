@@ -19,7 +19,7 @@ if (args.get('url')) {
   document.getElementById('pathname').textContent = o.pathname;
   document.getElementById('search').textContent = o.search;
 }
-
+// It will get the timeout time store into the local storage and then Pop out an alert box to show for user how many seconds will be unblock for the sites
 document.addEventListener('submit', e => {
     chrome.storage.local.get({
     timeout: ''
