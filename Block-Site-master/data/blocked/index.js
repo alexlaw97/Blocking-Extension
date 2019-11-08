@@ -21,7 +21,7 @@ if (args.get('url')) {
 }
 
 document.addEventListener('submit', e => {
-    chrome.storage.local.get({
+  chrome.storage.local.get({
     timeout: ''
 
   },prefs => {
@@ -36,6 +36,7 @@ document.addEventListener('submit', e => {
     method: 'open-once',
     url: args.get('url'),
     password: e.target.querySelector('[type=password]').value,
+    
     
   });
 });

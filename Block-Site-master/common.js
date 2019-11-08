@@ -251,6 +251,7 @@ const onMessage = (request, sender, response) => {
   else if (request.method === 'close-tab') {
     chrome.tabs.remove(sender.tab.id);
   }
+  // When the site url are being append into the blocked list
   else if (request.method === 'append-to-list') {
       notify('bg_msg_5');
       var audio = new Audio('../data/sounds/Portal2_sfx_button_positive.mp3');
