@@ -19,9 +19,22 @@ if (args.get('url')) {
   document.getElementById('pathname').textContent = o.pathname;
   document.getElementById('search').textContent = o.search;
 }
-// It will get the timeout time store into the local storage and then Pop out an alert box to show for user how many seconds will be unblock for the sites
+
+list.onclick = function(e) {
+  e.preventDefault();
+
+  var elm = e.target;
+  var audio = document.getElementById('audio');
+
+  var source = document.getElementById('audioSource');
+  source.src = elm.getAttribute('data-value');
+
+  audio.load(); //call this to just preload the audio without playing
+  audio.play(); //call this to play the song right away
+};
+
 document.addEventListener('submit', e => {
-    chrome.storage.local.get({
+  chrome.storage.local.get({
     timeout: ''
 
   },prefs => {
@@ -36,6 +49,7 @@ document.addEventListener('submit', e => {
     method: 'open-once',
     url: args.get('url'),
     password: e.target.querySelector('[type=password]').value,
+    
     
   });
 });
@@ -86,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => chrome.storage.local.get({
       }
     }, 1000);
   }
+
+
   //Unblock Hostname
   document.getElementById('exception').textContent = chrome.i18n.getMessage(
     prefs.reverse ? 'blocked_add_to_whitelist' : 'blocked_remove_blocking'

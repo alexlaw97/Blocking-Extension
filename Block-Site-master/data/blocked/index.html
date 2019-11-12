@@ -34,25 +34,37 @@
         </tbody>
       </table>
     </header>
-    
+    <ul style="list-style: none">
+      <li>Audio Files
+        <ul id="list">
+          <li><a href="#" data-value="https://fes.sfo2.cdn.digitaloceanspaces.com/musicfiles/2016-08-23_-_News_Opening_2_-_David_Fesliyan.mp3">Death_Becomes_Fur.oga</a></li>
+          <li><a href="#" data-value="https://fes.sfo2.cdn.digitaloceanspaces.com/musicfiles/2016-08-23_-_News_Opening_4_-_David_Fesliyan.mp3">Death_Becomes_Fur.mp4</a></li>
+          <li><a href="#" data-value="https://fes.sfo2.cdn.digitaloceanspaces.com/musicfiles/2019-03-04_-_They_Said_I_Cant_-_David_Fesliyan.mp3">rrs006.oga</a></li>
+          <li><a href="#" data-value="https://fes.sfo2.cdn.digitaloceanspaces.com/musicfiles/2019-04-26_-_Tranquility_-_www.fesliyanstudios.com.mp3">sound_90.mp3</a></li>
+        </ul>
+      </li>
+    </ul>
+
     <p id="message"></p>
     <p id="test"></p>
     <div flex="1"></div>
-<!--     Having an audio in the index page and it will auto play the video when the page is load. The music is get from cloud -->
-    <audio controls autoplay>
-        <source src=https://r2---sn-uphxqvujvh-2xol.googlevideo.com/videoplayback?expire=1571385175&ei=9xqpXbyEC5nc4wLg16SwDw&ip=153.126.209.172&id=o-AFN2Oo09S0DIYVgAwnTex4dzhKrz-ALDUToSk1hsK07J&itag=140&source=youtube&requiressl=yes&pcm2=no&mime=audio%2Fmp4&gir=yes&clen=210369972&dur=12998.669&lmt=1570066489343831&fvip=4&keepalive=yes&fexp=23842630&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cpcm2%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=ALgxI2wwRAIgIhD5TKEOAt-ujZha67NjR2yOdICeYlOcCs_fnnVSMG8CIBKnRAKse-YBxN0zCrwHxEghflIMhZpcRy7DLhnNXdno&title=Relaxing+Piano+Music%3A+Romantic+Music%2C+Beautiful+Relaxing+Music%2C+Sleep+Music%2C+Stress+Relief+%E2%98%85122&cms_redirect=yes&mip=2001:f40:907:b61f:d4bf:c505:8a5:55c5&mm=31&mn=sn-uphxqvujvh-2xol&ms=au&mt=1571378500&mv=m&mvi=1&pl=48&lsparams=mip,mm,mn,ms,mv,mvi,pl&lsig=AHylml4wRAIgCEhbhRNBpLUcvrRKu9GGgBVzvXBEq7LTMaFCXyTNoLECIEm_pcJn53KjGQ3sgE4KNRVg0mja__xeeVws1f9BRb5P  type="audio/mpeg">
+    <audio id="audio" controls="controls" controls autoplay>
+        <source id="audioSource" src=https://fes.sfo2.cdn.digitaloceanspaces.com/musicfiles/2019-04-20_-_Quiet_Time_-_David_Fesliyan.mp3  type="audio/mpeg">
       </audio>
     <footer hbox align=center>
-        <!-- <iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/368393042&color=%23ff5500&auto_play=true&hide_related=false"></iframe> -->
       <span data-i18n="blocked_master_password"></span>
       <form flex="1" hbox>
         <input type="password" autofocus="true" required="true" placeholder="Key in your password and press Enter">
       </form>
-      <a href="#" id="exception">-</a>&nbsp;|&nbsp;
+    
       <a href="#" id="options" data-i18n="blocked_options"></a>
     </footer>
+    <button class="btn" type="submit" id="exception">Unblock Site</button>
     <input type="button" id="switch">
     <script src="tldjs.js"></script>
     <script src="index.js"></script>
+    <script>
+   
+</script>
   </body>
 </html>
